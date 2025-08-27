@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    container_name: otel-collector
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP HTTP receiver
+    volumes:
+      - ./otel-collector.yaml:/etc/otelcol-contrib/otel-collector.yaml
+    command: ["--config=/etc/otelcol-contrib/otel-collector.yaml"]
+
+  tomcat-app:
+    build: ./tomcat
+    image: tomcat-otel
+    container_name: tomcat-otel-container
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - otel-collector
+
+  wildfly-app:
+    build: ./wildfly
+    image: wildfly-otel
+    container_name: wildfly-otel-container
+    ports:
+      - "8081:8080"
+    env_file:
+      - .env
+    depends_on:
+      - otel-collector

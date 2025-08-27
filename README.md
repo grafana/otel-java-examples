@@ -25,11 +25,13 @@ make clean
 - `make build-tomcat` - Build Tomcat image only
 - `make build-wildfly` - Build WildFly image only
 - `make run` - Run both containers
+- `make run-compose` - Run full stack with OpenTelemetry Collector
 - `make run-tomcat` - Run Tomcat only (port 8080)
 - `make run-wildfly` - Run WildFly only (port 8081)
+- `make stop` - Stop compose stack
 - `make stop-tomcat` - Stop Tomcat container
 - `make stop-wildfly` - Stop WildFly container
-- `make clean` - Stop and remove all containers/images
+- `make clean` - Stop and remove all containers, images, and volumes
 
 ## Configuration
 
