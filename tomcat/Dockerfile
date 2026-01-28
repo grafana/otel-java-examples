@@ -1,5 +1,5 @@
 # Minimal Tomcat + OpenTelemetry Java agent
-FROM tomcat:9.0.84-jdk8-corretto-al2
+FROM tomcat:9.0.113-jdk8-corretto-al2@sha256:0e4f13e4915c0ae5563326602fa47937a444d4d7fde040c445402bf0ac99be21
 
 # (Optional) set timezone; remove if UTC is fine
 ENV TZ=Australia/Sydney
