@@ -1,4 +1,4 @@
-FROM quay.io/wildfly/wildfly:latest
+FROM quay.io/wildfly/wildfly:latest@sha256:f1c520602a4dd842c2e3b54eaea382b450c33d05299c06f08e307ffee56a138d
 
 # Download Grafana OpenTelemetry Java agent
 RUN curl -L -o /opt/jboss/wildfly/bin/grafana-opentelemetry-java.jar \
