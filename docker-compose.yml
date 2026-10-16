@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   otel-collector:
-    image: otel/opentelemetry-collector-contrib:latest
+    image: otel/opentelemetry-collector-contrib:latest@sha256:1175b03003053962012f5a231f5567f66a3e8fdb960c7835c0e48f7aa1555806
     container_name: otel-collector
     ports:
       - "4317:4317"   # OTLP gRPC receiver
